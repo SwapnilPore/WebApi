@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.DataAccess", "WebApi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Contracts", "WebApi.Contracts\WebApi.Contracts.csproj", "{2398AF0C-2B9D-4677-8075-D89DA85745F6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7720364B-C86C-4712-A95F-368048A900DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUnitTest", "WebApiUnitTest\WebApiUnitTest.csproj", "{2D5FE0DE-C011-47DE-936B-AD6EC1D6C58F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{2398AF0C-2B9D-4677-8075-D89DA85745F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2398AF0C-2B9D-4677-8075-D89DA85745F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2398AF0C-2B9D-4677-8075-D89DA85745F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5FE0DE-C011-47DE-936B-AD6EC1D6C58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5FE0DE-C011-47DE-936B-AD6EC1D6C58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5FE0DE-C011-47DE-936B-AD6EC1D6C58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5FE0DE-C011-47DE-936B-AD6EC1D6C58F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D5FE0DE-C011-47DE-936B-AD6EC1D6C58F} = {7720364B-C86C-4712-A95F-368048A900DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C659689-D40C-455B-9DC5-46F7F789040E}

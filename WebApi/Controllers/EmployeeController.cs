@@ -5,10 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebApi.Contracts.Interfaces;
+using WebApi.Controllers.Filters;
 
 namespace WebApi.Controllers
 {
-    //[Route("api/employee/")]
+    [Route("api/employee/")]
     public class EmployeeController : ApiController
     {
         
@@ -19,24 +20,42 @@ namespace WebApi.Controllers
             _appService = appService;
         }
 
-        [Route("api/employee/getemp/{name}")]
         [HttpGet]
-        public IHttpActionResult GetEmployeeDataByName([FromUri]string name)
+        public IHttpActionResult GetEmployeeDataByName([FromUri] PagingModel pagingModel, string name)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest("Please check the Parameters");
+                return BadRequest("Please check the parameters");
             }
 
-            var employeeData = _appService.GetPagedEmployeeDataByName(name);
+            var empData = _appService.GetPagedEmployeeDataByName(name, pagingModel.PageSize, pagingModel.PageNo).ToList();
 
-            if(!employeeData.Any())
+            if (!empData.Any())
             {
                 return NotFound();
             }
 
-            return Ok(employeeData);
+            return Ok(empData);
         }
+
+        //[Route("api/Employee/{id:int}")]
+        //[HttpGet]
+        //public IHttpActionResult GetEmployeeDataById([FromUri] PagingModel pagingModel, int id)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest("Please check the parameters");
+        //    }
+
+        //    var empData = SkAppservice.GetPagedEmployeeDataById(id, pagingModel.PageSize, pagingModel.PageNo).ToList();
+
+        //    if (!empData.Any())
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(empData);
+        //}
 
     }
 }
